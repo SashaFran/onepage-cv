@@ -1129,6 +1129,7 @@ body li {
 
   body h1 {
     font-size: 22px !important;
+    line-height: 1.6;
   }
 
   body h2 {
