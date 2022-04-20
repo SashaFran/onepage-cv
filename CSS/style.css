@@ -1088,8 +1088,10 @@ body li {
 }
 
 @media (min-width: 1200px) {
+
   .container {
     width: 85%;
+    margin-top: 0;
   }
   html {
     overflow-y: scroll;
@@ -1122,6 +1124,7 @@ body li {
   #hello h1 {
     font-size: 50px !important;
     letter-spacing: normal !important;
+    font-weight: 400;
   }
 
   body h1 {
