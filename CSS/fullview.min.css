@@ -1,0 +1,162 @@
+/**
+ * fullView v1.1.2
+ */
+
+/*!
+ * https://github.com/seeratawan01/fullview.js
+ *
+ * @license GPLv3 for open source use only
+ *
+ * Copyright (C) 2020 https://github.com/seeratawan01/fullview.js/blob/master/LICENSE
+ */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+*,
+:after,
+:before {
+    box-sizing: inherit;
+}
+
+body {
+    overflow: hidden;
+}
+
+#fullview>* {
+
+    backface-visibility: hidden;
+    overflow: hidden
+}
+
+#fv-dots {
+    position: fixed;
+    top: 50%;
+    left: 93.5%;
+    transform: translate(-50%, -50%)
+}
+
+#fv-dots ul {
+    display: block;
+    list-style: none
+}
+
+#fv-dots ul li {
+    padding: 10px
+}
+
+#fv-dots ul li a {
+    display: block;
+    margin: auto;
+    width: 10px;
+    height: 10px;
+    text-align: center
+}
+
+#fv-dots ul li a span {
+    display: block;
+    z-index: 1;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #888;
+    border-radius: 50%;
+    margin: 0 auto;
+    width: 7px;
+    height: 7px;
+    transition: .1s ease all
+}
+
+#fv-dots ul a.active span {
+    width: 9px;
+    height: 9px;
+    background-color: #bdbdbd
+}
+
+#fv-dots ul a:hover span {
+    width: 9px;
+    height: 9px
+}
+
+.fv-tooltip {
+    position: relative;
+    transition: all .65s cubic-bezier(.84, -.18, .31, 1.26);
+}
+
+.fv-tooltip .fv-tooltiptext {
+    visibility: hidden;
+    width: 150px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background: #3e474f;
+    border-radius: .25em;
+    color: #edeff0;
+    text-align: center;
+    position: absolute;
+    z-index: 1;
+    top: -1px;
+    right: 105%
+}
+
+.fv-tooltip:hover .fv-tooltiptext {
+    visibility: visible;
+}
+
+.fv-tooltip .fv-tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #3e474f
+}
+
+.fv-tooltip.fv-tooltip-left .fv-tooltiptext::after {
+    left: unset;
+    right: 100%;
+    border-color: transparent #3e474f transparent transparent
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+    #fv-dots{
+        position: fixed;
+        top: -5%;
+        left: 50%;
+        transform: rotate(-90deg);
+    }
+    #fv-dots ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 0px;
+        padding-left: 0px;
+    }
+
+    #fv-dots ul li a span {
+        width: 15px;
+        height: 15px;
+    }
+    
+    #fv-dots ul li{
+        padding: 0;
+    }
+
+    #fv-dots ul a.active span {
+        width: 15px;
+        height: 15px;
+    }
+    
+
+
+}
