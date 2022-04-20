@@ -13,7 +13,7 @@ body {
 body {
   background-color: rgb(252, 241, 240, .2);
   color: #212121;
-  font-family: "Krub", sans-serif;
+  font-family: "Krub", sans-serif !important;
   overflow-y: scroll;
   margin: 0;
   padding: 0;
@@ -41,14 +41,17 @@ body span {
 
 body h1 {
   font-size: 70px;
+  font-family: "Krub", sans-serif !important;
 }
 
 body h2 {
   font-size: 24px;
+  font-family: "Krub", sans-serif !important;
 }
 
 body h3 {
   font-size: 20px;
+  font-family: "Krub", sans-serif !important;
 }
 
 body ul,
