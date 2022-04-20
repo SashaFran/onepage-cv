@@ -10,6 +10,7 @@
  * Copyright (C) 2020 https://github.com/seeratawan01/fullview.js/blob/master/LICENSE
  */
 
+const isMobile = /Mobi/i.test(window.navigator.userAgent);
 
 ; (function ($, window, document, undefined) {
 
@@ -77,7 +78,10 @@
 
         },
 
-        utilites: function () {
+        utilites: 
+        function () {
+            if(!isMobile){
+                console.log("2");
             this.createDots = function createDots() {
                 var $dots = $("#fv-dots");
                 if ($dots.length) {
@@ -121,6 +125,7 @@
 
                 return div.find('a');
             };
+        
 
             this.changeActiveStatus = function changeActiveStatus($view) {
                 this.$views.removeClass('active').eq($view).addClass('active');
@@ -131,6 +136,7 @@
                     this.$anchors.removeClass('active').filter('[data-scroll="' + $view + '"]').addClass('active')
                 }
             }
+        }
 
             this.scrollTo = function scrollTo($view, dir) {
 

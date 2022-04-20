@@ -459,22 +459,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/fullview.min.js"></script>
     <script>
-             $(document).ready(function () {
-
-            $("#fullview").fullView({
-                //Navigation
-                navbar: "#navbar",
-                backToTop: true,
-                dotsTooltips: true,
-            })
-
-            });
+            
         </script>
         <script>
 
-            const isMobile = /Mobi/i.test(window.navigator.userAgent)
+            const isMobile = /Mobi/i.test(window.navigator.userAgent);
             if (!isMobile) {
-                console.log("1");
+                console.log("Dektop");
                 $(".play").popover({
                 'trigger': "hover",
                 'html' : true,
@@ -483,17 +474,21 @@
                     return $('#customdiv').html();
                 } 
                 })
-            }else{
-                console.log("2");
-                $(".play").popover({
-                'trigger': "click",
-                'html' : true,
-                'placement' : 'top',
-                'content' : function() {
-                    return $('#customdiv').html();
-                } 
+
+                $(document).ready(function () {
+                $("#fullview").fullView({
+                    backToTop: true,
+                    dotsTooltips: true,
                 })
-               
+                });
+
+            }else{
+                console.log("mobile");           
+                $(document).ready(function () {
+                $("#fullview").fullView({
+                    backToTop: true,
+                })
+                });
             }
                
             </script>
